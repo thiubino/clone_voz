@@ -53,6 +53,26 @@ Weights are downloaded from Hugging Face on first use, not by `setup.sh`:
 - A CUDA GPU for practical inference. The package installs and imports on CPU,
   but generation is impractically slow without a GPU.
 
+## Running the Gradio demo
+
+```bash
+source .venv/bin/activate
+python VibeVoice/demo/gradio_demo.py --model_path vibevoice/VibeVoice-1.5B
+```
+
+Useful flags: `--device cuda|mps|cpu` (auto-detected), `--port`, `--share`
+(public Gradio tunnel), `--checkpoint_path` (LoRA adapters).
+
+Two things this needs that a sandboxed environment may not have:
+
+1. **Network access to `huggingface.co`**, to download the weights on first run.
+   A restricted egress policy shows up as
+   `ProxyError('Tunnel connection failed: 403 Forbidden')`. Pre-download the
+   weights on an unrestricted machine and pass a local directory to
+   `--model_path` to work offline.
+2. **A browser-reachable host.** Without `--share` the demo binds to
+   `127.0.0.1`, which is unreachable from outside a remote container.
+
 ## Usage
 
 See upstream docs after cloning: `VibeVoice/README.md`, `VibeVoice/EXAMPLES.md`,
