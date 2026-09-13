@@ -10,20 +10,30 @@ TTS model.
 ./setup.sh
 ```
 
-That runs the upstream install steps:
+That runs the upstream install steps inside a local virtualenv:
 
 ```bash
 git clone https://github.com/vibevoice-community/VibeVoice
-cd VibeVoice
-pip install -e .
+python3 -m venv .venv
+.venv/bin/pip install -e VibeVoice
 ```
 
 The clone lands in `./VibeVoice/` and is git-ignored — this repo holds the setup,
 not a vendored copy of upstream.
 
+The virtualenv is not optional. VibeVoice depends on `aiortc`, which requires a
+newer `cryptography` than the Debian-packaged one, and installing into the system
+interpreter fails with:
+
+```
+ERROR: Cannot uninstall cryptography 41.0.7, RECORD file not found.
+Hint: The package was installed by debian.
+```
+
 ## Verify
 
 ```bash
+source .venv/bin/activate
 python -c "import vibevoice; print(vibevoice.__file__)"
 ```
 
@@ -39,7 +49,7 @@ Weights are downloaded from Hugging Face on first use, not by `setup.sh`:
 
 ## Requirements
 
-- Python >= 3.9
+- Python >= 3.9 (tested on 3.11)
 - A CUDA GPU for practical inference. The package installs and imports on CPU,
   but generation is impractically slow without a GPU.
 
