@@ -4,6 +4,9 @@ Setup for [VibeVoice](https://github.com/vibevoice-community/VibeVoice) — the
 community-maintained fork of Microsoft's long-form, multi-speaker conversational
 TTS model.
 
+**On Windows? Follow [WINDOWS.md](WINDOWS.md)** — it has a scripted installer
+and a step-by-step walkthrough. The instructions below are for Linux/macOS.
+
 ## Setup
 
 ```bash

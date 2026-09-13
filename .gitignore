@@ -1,11 +1,11 @@
 # VibeVoice is cloned by setup.sh, not vendored here
-/VibeVoice/
+VibeVoice/
 
 # Python
 __pycache__/
 *.py[cod]
 *.egg-info/
-/.venv/
+.venv/
 venv/
 
 # Model weights & generated audio
