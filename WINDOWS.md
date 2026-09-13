@@ -7,6 +7,22 @@
 A step-by-step guide. You do not need to understand any of the commands —
 copy, paste, press Enter.
 
+## Easiest route: no installation at all
+
+VibeVoice ships a Google Colab notebook. Google lends you a free GPU, so
+nothing is installed locally and nothing is downloaded:
+
+<https://colab.research.google.com/github/vibevoice-community/VibeVoice/blob/main/demo/VibeVoice_colab.ipynb>
+
+1. Sign in with a Google account.
+2. **Runtime -> Change runtime type -> T4 GPU -> Save.** Don't skip this.
+3. Press the play button on each block, top to bottom.
+4. Edit the transcript block to change what is spoken.
+5. Run the last blocks to generate and download a `.wav`.
+
+On a PC without an NVIDIA card this is both easier and faster than a local
+install. The rest of this guide is for installing on your own machine.
+
 ## What you need first
 
 **Python 3.12** and **git**. If you already have them, skip to *Install*.
