@@ -1,5 +1,7 @@
 # Running VibeVoice on Windows
 
+
+**Prefer a web page you can read on the Windows machine?** <https://claude.ai/code/artifact/38baf99d-a942-44ef-a5b8-a5c6640cc8c3>
 A step-by-step guide. You do not need to understand any of the commands —
 copy, paste, press Enter.
 
